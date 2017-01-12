@@ -1,7 +1,19 @@
-# Site for the Mood
+# Сайт-вдохновение
+Сайт-входновение, которые шутит (старается) и радует пользователя (я очень на это надеюсь).
+[Результат можно посмотреть здесь]: https://arseni-baranov.github.io/20_mood/index.html
 
-[TODO. There will be project description]
+Вместе с сайтом прилагается скрипт, который при запуске собирает сайт заново (естественно только локально), и скачивает десяток новых актуальных шуток рандомно.
 
-# Project Goals
+# Скрипт
 
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+Для запуска нужно установить зависимости, например так:
+```
+pip install -r requirements.txt
+```
+
+и запустить скрипт:
+```
+python populate_quotes.py
+```
+
+и получить на выходе готовый index.html
