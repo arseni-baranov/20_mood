@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Настроение</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script id="quotes_json" type="application/json">
+	{{ json_jokes }}
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+	{{ favicon }}
+</head>
+<body>
+	
+	<div class="joke">
+		<h2 id="joke_text">Joke</h2>		
+		<p id="site">Site</p>
+	</div>
+
+	<style>
+		.joke {
+			top: 5%;
+			left: 5%;
+			position: absolute;
+			color: #FFFFFF;
+			font-family: 'Open Sans', sans-serif;
+			background-color: brown;
+			width: 1000px;
+			padding: 40px;
+			border-radius: 25px;
+		}
+
+		h2 {
+			font-size: 16px;
+		}
+
+		p {
+			font-size: 12px;
+		}
+
+		video#bgvid { 
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    width: auto;
+	    height: auto;
+	    z-index: -100;
+	    -ms-transform: translateX(-50%) translateY(-50%);
+	    -moz-transform: translateX(-50%) translateY(-50%);
+	    -webkit-transform: translateX(-50%) translateY(-50%);
+	    transform: translateX(-50%) translateY(-50%);
+	    background-size: cover; }
+	</style>
+
+	<video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+	    <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Border-Collies.mp4" type="video/mp4">
+	    <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Border-Collies.mp4" type="video/webm">
+	</video>
+
+</body>
+	<script>
+		jokes = jQuery.parseJSON( $('#quotes_json').text() );
+		amount = jokes.length - 1;
+		random = Math.floor((Math.random() * amount) + 1); 
+
+
+		$('h2#joke_text').html(jokes[random]['elementPureHtml']);
+		$('p#site').text(jokes[random]['name']);
+	</script>
+</html>
