@@ -17,4 +17,4 @@ pip install -r requirements.txt
 python populate_quotes.py
 ```
 
-и получить на выходе готовый index.html в папке build
+и получить на выходе готовый index.html в папке docs
