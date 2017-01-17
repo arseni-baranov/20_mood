@@ -14,14 +14,14 @@ def load_template(location="builder/template.html"):
         return Template(html_template)
 
 
-def write_jokes(js_template, jokes_json, name="static/js/main.js"):
+def write_jokes(js_template, jokes_json, name="docs/static/js/main.js"):
     with open(name, 'w', encoding='utf-8-sig') as f:
         f.write(js_template.render(jokes_json=jokes_json))
 
 
-def write_html(html_template, name="build/index.html"):
+def write_html(html_template, name="docs/index.html"):
     with open(name, 'w', encoding='utf-8-sig') as f:
-        f.write(html_template.render(favicon='<link rel="shortcut icon" href="../static/img/favicon.ico">'))
+        f.write(html_template.render(favicon='<link rel="shortcut icon" href="static/img/favicon.ico">'))
 
 
 def main():
